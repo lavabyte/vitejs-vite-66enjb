@@ -1,8 +1,7 @@
 import { TianGan } from './tianGan';
-import { DiZhi } from './diZhi';
 import { ElementRelations } from './basicTypes';
 
-function elementOrder(char: TianGan | DiZhi) {
+function elementOrder(char: TianGan) {
   if (char.gender == '阴') {
     return (char.order - 1) / 2;
   } else {
@@ -11,8 +10,8 @@ function elementOrder(char: TianGan | DiZhi) {
 }
 
 function getElementRelation(
-  otherChar: TianGan | DiZhi,
-  selfChar: TianGan | DiZhi
+  otherChar: TianGan,
+  selfChar: TianGan
 ): ElementRelations {
   let otherOrder = elementOrder(otherChar);
   let selfOrder = elementOrder(selfChar);
